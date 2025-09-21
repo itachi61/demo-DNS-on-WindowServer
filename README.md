@@ -92,9 +92,9 @@ Hoặc nếu như làm như video chúng mình demo (Cách ở trên đơn giả
 + Refresh cả 2 zone.
 Để kiểm thử thành công hay chưa ta có thể tạo thêm 1 Host ở máy 1 sau đó xem nó có tự động thêm vào ở máy 2 hay không.
 
-Máy 1:
++Máy 1:
 <img width="825" height="618" alt="image" src="https://github.com/user-attachments/assets/91b4f12e-9a4e-41df-9248-53e6c269a988" />
-Máy 2: 
++Máy 2: 
 <img width="1214" height="877" alt="image" src="https://github.com/user-attachments/assets/7a88635e-daf3-4443-97ed-0db8b7d291f1" />
 
 Vậy là đã thành công việc Backup dữ liệu.
