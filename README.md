@@ -55,7 +55,7 @@ sau đó cấu hình như ảnh
 <img width="669" height="413" alt="image" src="https://github.com/user-attachments/assets/9a5194ef-738a-464d-b609-dafd4a152123" />
 
 6. Thực hiện Forwarder giữa 2 máy.
-+ Tắt tưởng lửa ( firewall ) ở 2 máy
++ Tắt tưởng lửa ( firewall ) ở 2 máy (Ở Local Server có dòng Window Firewall, nhấp vào dòng chữ kế bên nó "Public: On" -> vào Turn Window Firewall on or off -> Chọn cả 2 mục "turn off"
 + Click chuột phải vào file sgu1.com ở máy 1 và vào Zone Transfer sau đó thêm địa chỉ của máy 2 để phục vụ cho việc forwarder (192.168.1.10), dùng edit để thêm vào sau đó apply.
 <img width="1214" height="666" alt="image" src="https://github.com/user-attachments/assets/a9692991-5c52-4d90-8f06-9e3f2dc8cac4" />
 
@@ -77,7 +77,20 @@ Việc backup này sẽ giúp DNS chúng ta vẫn hoạt động được Khi DN
 + Vào Forward Lookup Zone ở máy 2 , tạo thêm 1 Secondary zone có tên sgu1.com và địa chỉ 192.168.1.1
 + Finish → DNS2 sẽ tự động tải zone từ DNS1.
 
-để kiểm thử thành công hay chưa ta có thể tạo thêm 1 Host ở máy 1 sau đó xem nó có tự động thêm vào ở máy 2 hay không.
+Hoặc nếu như làm như video chúng mình demo (Cách ở trên đơn giản hơn là chỉ thẳng vào máy cần backup, cách ở trong video là định nghĩa từng máy để 2 máy hiểu máy nào là máy cần backup và máy backup.
+
++ Mở DNS Manager → chuột phải vào zone (vd: sgu1.com) → Properties.
++ Vào tab Zone Transfers → tick Allow zone transfers.
++ Chọn: Only to servers listed oin the Name Servers tab
+
++ Vào Name Servers, nhấn vào Add
++ Thêm từng Fully qualified domain name (FQDN) tương ứng với IP Addresses:
+  (www.sgu1.com - 192.168.1.1) (sgu2.sgu1.com - 192.168.1.10)
++ Nhấp vào Apply và nhấp OK
+
++ Ở Reversed Lookup Zone cũng làm giống y chang các bước trên
++ Refresh cả 2 zone.
+Để kiểm thử thành công hay chưa ta có thể tạo thêm 1 Host ở máy 1 sau đó xem nó có tự động thêm vào ở máy 2 hay không.
 
 Máy 1:
 <img width="825" height="618" alt="image" src="https://github.com/user-attachments/assets/91b4f12e-9a4e-41df-9248-53e6c269a988" />
